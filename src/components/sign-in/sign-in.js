@@ -36,10 +36,12 @@ function SignIn() {
           handleChange={(e) => setPassword(e.target.value)}
           label="password"
         />
-        <CustomButton type="submit">Sign in</CustomButton>
-        <CustomButton onClick={signInWithGoogle}>
-          Sign in with google
-        </CustomButton>
+        <div className="buttons">
+          <CustomButton type="submit">Sign in</CustomButton>
+          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+            Sign in with google
+          </CustomButton>
+        </div>
       </form>
     </div>
   );
