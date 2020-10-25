@@ -4,11 +4,13 @@ import { ReactComponent as Logo } from "../../assets/4.3 crown.svg";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/utils";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../redux/selectors";
+import { selectCurrentUser, selectCartDisplay } from "../../redux/selectors";
 import CartIcon from "../cart-icon/cart-icon";
+import CartDropdown from "../cart-dropdown/cart-dropdown";
 
 function Header() {
   const currentUser = useSelector(selectCurrentUser);
+  const cartHidden = useSelector(selectCartDisplay);
   return (
     <div className="header">
       <Link to="/" className="logo-container">
@@ -32,6 +34,7 @@ function Header() {
         )}
         <CartIcon />
       </div>
+      {!cartHidden && <CartDropdown />}
     </div>
   );
 }
