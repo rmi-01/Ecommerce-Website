@@ -4,7 +4,8 @@ import { ReactComponent as Logo } from "../../assets/4.3 crown.svg";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/utils";
 import { useSelector } from "react-redux";
-import { selectCurrentUser, selectCartDisplay } from "../../redux/selectors";
+import { selectCartDisplay } from "../../redux/cart/cart.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
 import CartIcon from "../cart-icon/cart-icon";
 import CartDropdown from "../cart-dropdown/cart-dropdown";
 
@@ -17,10 +18,10 @@ function Header() {
         <Logo className="logo" />
       </Link>
       <div className="options">
-        <Link className="option" to="shop">
+        <Link className="option" to="/shop">
           SHOP
         </Link>
-        <Link className="option" to="contact">
+        <Link className="option" to="/contact">
           CONTACT
         </Link>
         {currentUser ? (
@@ -28,7 +29,7 @@ function Header() {
             SIGN OUT
           </div>
         ) : (
-          <Link className="option" to="sign-in">
+          <Link className="option" to="/sign-in">
             SIGN IN
           </Link>
         )}

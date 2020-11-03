@@ -8,7 +8,7 @@ import SignInAndSignUp from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.js"
 import { auth, CreateUserProfileDocument } from "./firebase/utils";
 import { SET_CURRENT_USER } from "./redux/user/user.reducer";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCurrentUser } from "./redux/selectors";
+import { selectCurrentUser } from "./redux/user/user.selectors";
 
 function App() {
   const dispatch = useDispatch();
