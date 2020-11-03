@@ -8,7 +8,6 @@ import { selectCartItemsCount } from "../../redux/cart/cart.selectors";
 function CartIcon() {
   const dispatch = useDispatch();
   const cartItemsCount = useSelector(selectCartItemsCount);
-  console.log("Hello from cart-icon");
   return (
     <div className="cart-icon" onClick={() => dispatch(TOGGLE_CART_DISPLAY())}>
       <ShoppingIcon className="shopping-icon" />
