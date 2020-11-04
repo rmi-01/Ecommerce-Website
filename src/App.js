@@ -32,7 +32,7 @@ function App() {
     return () => {
       unSubscribeFromAuth();
     };
-  });
+  }, [dispatch]);
 
   return (
     <div>

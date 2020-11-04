@@ -8,3 +8,6 @@ export const addItemsToCart = (cartItems, newItem) => {
     );
   return [...cartItems, { ...newItem, quantity: 1 }];
 };
+
+export const clearItemsFromCart = (cartItems, newItem) =>
+  cartItems.filter((cartItem) => cartItem.id !== newItem.id);
