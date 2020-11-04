@@ -1,7 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import "./checkout-item.styles.scss";
-import { CLEAR_ITEM } from "../../redux/cart/cart.reducer";
+import {
+  ADD_CART_ITEMS,
+  CLEAR_ITEM,
+  REMOVE_ITEM,
+} from "../../redux/cart/cart.reducer";
 
 function CheckoutItem({ cartItem }) {
   const { imageUrl, name, quantity, price } = cartItem;
@@ -12,7 +16,18 @@ function CheckoutItem({ cartItem }) {
         <img src={imageUrl} alt="item" />
       </div>
       <span className="name">{name}</span>
-      <span className="quantity">{quantity}</span>
+      <span className="quantity">
+        <div className="arrow" onClick={() => dispatch(REMOVE_ITEM(cartItem))}>
+          &#10094;
+        </div>
+        <span className="value">{quantity}</span>
+        <div
+          className="arrow"
+          onClick={() => dispatch(ADD_CART_ITEMS(cartItem))}
+        >
+          &#10095;
+        </div>
+      </span>
       <span className="price">{price}</span>
       <span
         className="remove-button"
