@@ -9,6 +9,7 @@ import { auth, CreateUserProfileDocument } from "./firebase/utils";
 import { SET_CURRENT_USER } from "./redux/user/user.reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "./redux/user/user.selectors";
+import Checkout from "./pages/checkout/checkout.js";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function App() {
     return () => {
       unSubscribeFromAuth();
     };
-  }, []);
+  });
 
   return (
     <div>
@@ -39,6 +40,9 @@ function App() {
       <Switch>
         <Route path="/shop">
           <ShopPage />
+        </Route>
+        <Route path="/checkout">
+          <Checkout />
         </Route>
         <Route path="/sign-in">
           {currentUser ? <Redirect to="/" /> : <SignInAndSignUp />}
