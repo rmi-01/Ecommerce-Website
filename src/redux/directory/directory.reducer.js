@@ -1,4 +1,6 @@
-export default [
+import { createSlice } from "@reduxjs/toolkit";
+
+const items = [
   {
     title: "hats",
     imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
@@ -32,3 +34,12 @@ export default [
     linkUrl: "shop/mens",
   },
 ];
+
+const directory = createSlice({
+  name: "directory",
+  initialState: {
+    items,
+  },
+});
+
+export default directory.reducer;

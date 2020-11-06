@@ -1,4 +1,6 @@
-export default [
+import { createSlice } from "@reduxjs/toolkit";
+
+const items = [
   {
     id: 1,
     title: "Hats",
@@ -245,3 +247,12 @@ export default [
     ],
   },
 ];
+
+const shop = createSlice({
+  name: "shop",
+  initialState: {
+    items,
+  },
+});
+
+export default shop.reducer;
