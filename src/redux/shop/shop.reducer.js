@@ -248,11 +248,11 @@ const items = [
   },
 ];
 
-const products = createSlice({
-  name: "products",
+const shop = createSlice({
+  name: "shop",
   initialState: {
     items,
   },
 });
 
-export default products.reducer;
+export default shop.reducer;
