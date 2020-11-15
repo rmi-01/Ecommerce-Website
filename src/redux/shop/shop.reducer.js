@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const items = [
-  {
+const items = {
+  hats: {
     id: 1,
     title: "Hats",
     routeName: "hats",
@@ -62,7 +62,7 @@ const items = [
       },
     ],
   },
-  {
+  sneakers: {
     id: 2,
     title: "Sneakers",
     routeName: "sneakers",
@@ -117,7 +117,7 @@ const items = [
       },
     ],
   },
-  {
+  jackets: {
     id: 3,
     title: "Jackets",
     routeName: "jackets",
@@ -154,7 +154,7 @@ const items = [
       },
     ],
   },
-  {
+  womens: {
     id: 4,
     title: "Womens",
     routeName: "womens",
@@ -203,7 +203,7 @@ const items = [
       },
     ],
   },
-  {
+  mens: {
     id: 5,
     title: "Mens",
     routeName: "mens",
@@ -246,7 +246,7 @@ const items = [
       },
     ],
   },
-];
+};
 
 const shop = createSlice({
   name: "shop",
